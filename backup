@@ -1,0 +1,101 @@
+<template>
+  <div>
+    <!-- 🔹 BANNER -->
+    <div class="banner text-center text-white py-4">
+      <h1 class="mb-1">ยินดีต้อนรับสู่ MyCRUD</h1>
+      <p class="lead">ระบบจัดการข้อมูลอย่างง่าย ด้วย Vue 3 + Bootstrap</p>
+    </div>
+
+    <!-- 🔹 NAVBAR -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #1f2d5a;">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white fw-bold" href="#">MyCRUD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">เข้าสู่ระบบ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">สมัครสมาชิก</a>
+            </li>
+          </ul>
+
+          <!-- 🔸 แบบฟอร์มค้นหา -->
+          <form class="d-flex" role="search" @submit.prevent="handleSearch">
+            <input
+              v-model="searchQuery"
+              class="form-control me-2"
+              type="search"
+              placeholder="ค้นหา..."
+              aria-label="Search"
+            >
+            <button class="btn btn-success" type="submit">ค้นหา</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 🔹 MAIN CONTENT -->
+    <main class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">จัดการข้อมูล</h5>
+              <p class="card-text">เพิ่ม ลบ แก้ไขข้อมูลได้ง่าย รวดเร็ว และปลอดภัย</p>
+              <a href="#" class="btn btn-primary">เริ่มต้นเลย</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">ระบบสมาชิก</h5>
+              <p class="card-text">สมัครและเข้าสู่ระบบเพื่อใช้งานฟีเจอร์พิเศษ</p>
+              <a href="#" class="btn btn-secondary">เข้าสู่ระบบ</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">ค้นหาข้อมูล</h5>
+              <p class="card-text">ระบบค้นหาทรงพลัง ค้นหาสิ่งที่คุณต้องการได้ทันที</p>
+              <a href="#" class="btn btn-success">ลองค้นหา</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script setup>
+
+</script>
+
+<style scoped>
+.banner {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  padding: 2rem 1rem;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  color: #a6d1ff !important;
+}
+/* Card Hover Effect */
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+</style>
